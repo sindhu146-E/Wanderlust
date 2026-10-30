@@ -1,0 +1,356 @@
+import type { Destination, Tour } from './supabase';
+
+export const DESTINATIONS: Destination[] = [
+  {
+    id: 'bali',
+    slug: 'bali',
+    name: 'Bali',
+    country: 'Indonesia',
+    region: 'Southeast Asia',
+    tagline: 'Island of the Gods — temples, rice terraces, and surf',
+    description:
+      'From the artistic heart of Ubud to the beach clubs of Seminyak, Bali blends spiritual heritage with tropical indulgence. Visit ancient water temples, hike Mount Batur at dawn, and unwind on hidden beaches.',
+    image_url:
+      'https://images.pexels.com/photos/1802255/pexels-photo-1802255.jpeg?auto=compress&cs=tinysrgb&w=1200',
+    price_from: 1290,
+    duration_days: 8,
+    rating: 4.8,
+    tags: ['Beach', 'Culture', 'Adventure', 'Wellness'],
+    highlights: [
+      'Sunrise hike up Mount Batur',
+      'Tegallalang Rice Terraces',
+      'Uluwatu Temple at sunset',
+      'Ubud monkey forest',
+    ],
+    sort_order: 1,
+  },
+  {
+    id: 'santorini',
+    slug: 'santorini',
+    name: 'Santorini',
+    country: 'Greece',
+    region: 'Mediterranean',
+    tagline: 'Whitewashed cliffs above the Aegean Sea',
+    description:
+      'The crescent-shaped island born from a volcanic caldera. Watch legendary sunsets from Oia, sail to hot springs, and taste Assyrtiko wine grown in volcanic soil. Every corner is a postcard.',
+    image_url:
+      'https://images.pexels.com/photos/161901/santorini-thira-greece-161901.jpeg?auto=compress&cs=tinysrgb&w=1200',
+    price_from: 1690,
+    duration_days: 6,
+    rating: 4.9,
+    tags: ['Beach', 'Culture', 'Romance', 'Food'],
+    highlights: [
+      'Oia sunset cruise',
+      'Caldera hot springs',
+      'Akrotiri archaeological site',
+      'Assyrtiko wine tasting',
+    ],
+    sort_order: 2,
+  },
+  {
+    id: 'kyoto',
+    slug: 'kyoto',
+    name: 'Kyoto',
+    country: 'Japan',
+    region: 'East Asia',
+    tagline: 'Ancient capital of temples, tea, and tradition',
+    description:
+      "Walk through 1,000 torii gates at Fushimi Inari, meditate in Zen rock gardens, and witness geisha in Gion. Kyoto is where Japan's soul lives — quiet, deliberate, and breathtaking in every season.",
+    image_url:
+      'https://images.pexels.com/photos/161251/kyoto-temple-japan-161251.jpeg?auto=compress&cs=tinysrgb&w=1200',
+    price_from: 2100,
+    duration_days: 7,
+    rating: 4.9,
+    tags: ['Culture', 'Food', 'Wellness', 'City'],
+    highlights: [
+      'Fushimi Inari shrine at dawn',
+      'Arashiyama bamboo grove',
+      'Tea ceremony in Gion',
+      'Kinkaku-ji golden pavilion',
+    ],
+    sort_order: 3,
+  },
+  {
+    id: 'patagonia',
+    slug: 'patagonia',
+    name: 'Patagonia',
+    country: 'Chile & Argentina',
+    region: 'South America',
+    tagline: 'Wild wilderness at the end of the world',
+    description:
+      'Trek past towering granite spires, brilliant blue glaciers, and windswept steppe. Torres del Paine and El Chalten offer the most dramatic hiking on the planet, with condors circling overhead.',
+    image_url:
+      'https://images.pexels.com/photos/191795/pexels-photo-191795.jpeg?auto=compress&cs=tinysrgb&w=1200',
+    price_from: 2890,
+    duration_days: 10,
+    rating: 4.8,
+    tags: ['Adventure', 'Nature', 'Hiking', 'Wildlife'],
+    highlights: [
+      'Torres del Paine W trek',
+      'Perito Moreno glacier walk',
+      'Pehoe Lake sunrise',
+      'Estancia gaucho experience',
+    ],
+    sort_order: 4,
+  },
+  {
+    id: 'marrakech',
+    slug: 'marrakech',
+    name: 'Marrakech',
+    country: 'Morocco',
+    region: 'North Africa',
+    tagline: 'Spice-scented souks and desert nights',
+    description:
+      'Lose yourself in the labyrinth of the medina, bargain in the souks, and ride camels into the Sahara at sunset. Stay in a traditional riad and feast on tagine under the stars.',
+    image_url:
+      'https://images.pexels.com/photos/672532/pexels-photo-672532.jpeg?auto=compress&cs=tinysrgb&w=1200',
+    price_from: 1190,
+    duration_days: 7,
+    rating: 4.7,
+    tags: ['Culture', 'Adventure', 'Food', 'Desert'],
+    highlights: [
+      'Jemaa el-Fnaa square at night',
+      'Sahara camel trek and camp',
+      'Majorelle Garden',
+      'Atlas Mountains day trip',
+    ],
+    sort_order: 5,
+  },
+  {
+    id: 'iceland',
+    slug: 'iceland',
+    name: 'Iceland',
+    country: 'Iceland',
+    region: 'Nordic',
+    tagline: 'Fire, ice, and the Northern Lights',
+    description:
+      'Chase the aurora across black-sand deserts, soak in geothermal lagoons, and walk behind waterfalls. The Ring Road packs waterfalls, glaciers, geysers, and volcanic beaches into one unforgettable loop.',
+    image_url:
+      'https://images.pexels.com/photos/2086361/pexels-photo-2086361.jpeg?auto=compress&cs=tinysrgb&w=1200',
+    price_from: 1990,
+    duration_days: 8,
+    rating: 4.8,
+    tags: ['Adventure', 'Nature', 'Wellness', 'Road Trip'],
+    highlights: [
+      'Northern Lights hunt',
+      'Blue Lagoon geothermal spa',
+      'Golden Circle day tour',
+      'Glacier hike on Solheimajokull',
+    ],
+    sort_order: 6,
+  },
+];
+
+export const TOURS: Tour[] = [
+  {
+    id: 'bali-cultural-immersion',
+    slug: 'bali-cultural-immersion',
+    title: 'Bali Cultural Immersion',
+    destination_slug: 'bali',
+    description:
+      "Eight days through Bali's spiritual heart — temples, rice terraces, traditional cooking, and a sunrise volcano hike.",
+    image_url:
+      'https://images.pexels.com/photos/1802255/pexels-photo-1802255.jpeg?auto=compress&cs=tinysrgb&w=1200',
+    price: 1290,
+    duration_days: 8,
+    group_size: 10,
+    difficulty: 'moderate',
+    includes: [
+      'Boutique hotels',
+      'Daily breakfast',
+      'Local guides',
+      'All temple entrance fees',
+      'Cooking class',
+      'Mount Batur sunrise hike',
+    ],
+    itinerary: [
+      { day: 1, title: 'Arrival in Denpasar', detail: 'Airport pickup and transfer to Ubud. Welcome dinner.' },
+      { day: 2, title: 'Ubud temples & rice terraces', detail: 'Tirta Empul water temple, Tegallalang terraces, monkey forest.' },
+      { day: 3, title: 'Balinese cooking class', detail: 'Market visit and hands-on cooking with a local family.' },
+      { day: 4, title: 'Mount Batur sunrise', detail: '2 AM departure for the volcanic summit hike. Afternoon hot springs.' },
+      { day: 5, title: 'Transfer to Seminyak', detail: 'Move to the coast. Free afternoon at the beach.' },
+      { day: 6, title: 'Uluwatu & Kecak dance', detail: 'Cliffside temple visit and traditional fire dance at sunset.' },
+      { day: 7, title: 'Free day', detail: 'Optional surf lesson, spa, or beach club day.' },
+      { day: 8, title: 'Departure', detail: 'Transfer to airport.' },
+    ],
+    rating: 4.8,
+    sort_order: 1,
+  },
+  {
+    id: 'santorini-island-hopping',
+    slug: 'santorini-island-hopping',
+    title: 'Santorini & Aegean Islands',
+    destination_slug: 'santorini',
+    description:
+      'Six days of caldera views, volcanic hot springs, wine country, and the famous Oia sunset cruise.',
+    image_url:
+      'https://images.pexels.com/photos/161901/santorini-thira-greece-161901.jpeg?auto=compress&cs=tinysrgb&w=1200',
+    price: 1690,
+    duration_days: 6,
+    group_size: 12,
+    difficulty: 'easy',
+    includes: [
+      'Cliffside hotels',
+      'Daily breakfast',
+      'Sunset cruise',
+      'Wine tasting',
+      'Caldera hot springs swim',
+      'Akrotiri archaeological site',
+    ],
+    itinerary: [
+      { day: 1, title: 'Arrival in Santorini', detail: 'Transfer to cliffside hotel in Imerovigli. Welcome dinner.' },
+      { day: 2, title: 'Caldera cruise', detail: 'Sail to the volcano, swim in hot springs, sunset on board.' },
+      { day: 3, title: 'Akrotiri & wine', detail: 'Minoan ruins visit, then Assyrtiko tasting at a volcanic vineyard.' },
+      { day: 4, title: 'Oia exploration', detail: 'Walk the caldera path to Oia. Free afternoon for shopping and cafes.' },
+      { day: 5, title: 'Beach day', detail: 'Red Beach and Perissa Black Beach. Optional snorkeling.' },
+      { day: 6, title: 'Departure', detail: 'Transfer to airport.' },
+    ],
+    rating: 4.9,
+    sort_order: 2,
+  },
+  {
+    id: 'kyoto-zen-journey',
+    slug: 'kyoto-zen-journey',
+    title: 'Kyoto Zen Journey',
+    destination_slug: 'kyoto',
+    description:
+      "Seven days through Japan's ancient capital — shrines, tea ceremonies, bamboo groves, and a day trip to Nara.",
+    image_url:
+      'https://images.pexels.com/photos/161251/kyoto-temple-japan-161251.jpeg?auto=compress&cs=tinysrgb&w=1200',
+    price: 2100,
+    duration_days: 7,
+    group_size: 8,
+    difficulty: 'easy',
+    includes: [
+      'Ryokan & hotels',
+      'Some meals',
+      'JR pass',
+      'Tea ceremony',
+      'All temple entrance fees',
+      'Nara day trip',
+    ],
+    itinerary: [
+      { day: 1, title: 'Arrival in Kyoto', detail: 'Check in to your ryokan. Evening stroll in Gion.' },
+      { day: 2, title: 'Eastern temples', detail: 'Kiyomizu-dera, Yasaka shrine, and the Higashiyama district.' },
+      { day: 3, title: 'Fushimi Inari & tea', detail: 'Dawn visit to the thousand torii gates. Afternoon tea ceremony.' },
+      { day: 4, title: 'Arashiyama', detail: 'Bamboo grove, Tenryu-ji, and the monkey park.' },
+      { day: 5, title: 'Nara day trip', detail: "Todai-ji's Great Buddha and the deer park." },
+      { day: 6, title: 'Golden Pavilion & Zen', detail: 'Kinkaku-ji and Ryoan-ji rock garden. Free evening.' },
+      { day: 7, title: 'Departure', detail: 'Transfer to Kansai airport.' },
+    ],
+    rating: 4.9,
+    sort_order: 3,
+  },
+  {
+    id: 'patagonia-w-trek',
+    slug: 'patagonia-w-trek',
+    title: 'Patagonia W Trek',
+    destination_slug: 'patagonia',
+    description:
+      'Ten days of the iconic W trek through Torres del Paine, plus a glacier walk on Perito Moreno.',
+    image_url:
+      'https://images.pexels.com/photos/191795/pexels-photo-191795.jpeg?auto=compress&cs=tinysrgb&w=1200',
+    price: 2890,
+    duration_days: 10,
+    group_size: 8,
+    difficulty: 'challenging',
+    includes: [
+      'Refugios & hotels',
+      'All meals on trek',
+      'Expert trekking guide',
+      'Park entrance fees',
+      'Glacier walk',
+      'Transfers',
+    ],
+    itinerary: [
+      { day: 1, title: 'Arrival in Punta Arenas', detail: 'Transfer to Puerto Natales. Trek briefing and gear check.' },
+      { day: 2, title: 'To Torres base', detail: 'Hike to the base of the granite towers. 8 hours.' },
+      { day: 3, title: 'To Refugio Cuernos', detail: 'Coastal trail along Lake Nordenskjold. 5 hours.' },
+      { day: 4, title: 'French Valley', detail: 'Hike into the hanging valley of the French River. 8 hours.' },
+      { day: 5, title: 'Grey Glacier', detail: 'Trek to Refugio Grey and lake-side views of the glacier.' },
+      { day: 6, title: 'Boat & transfer', detail: 'Boat across Lago Grey, transfer to El Calafate, Argentina.' },
+      { day: 7, title: 'Perito Moreno', detail: 'Guided glacier walk with crampons. Evening in El Calafate.' },
+      { day: 8, title: 'El Chalten', detail: 'Transfer to El Chalten. Short hike to Laguna Capri.' },
+      { day: 9, title: 'Laguna de los Tres', detail: 'The classic Fitz Roy day hike. 9 hours.' },
+      { day: 10, title: 'Departure', detail: 'Transfer to El Calafate airport.' },
+    ],
+    rating: 4.8,
+    sort_order: 4,
+  },
+  {
+    id: 'marrakech-sahara-adventure',
+    slug: 'marrakech-sahara-adventure',
+    title: 'Marrakech & Sahara Adventure',
+    destination_slug: 'marrakech',
+    description:
+      'Seven days from the souks of Marrakech to a camel trek and overnight camp in the Sahara dunes.',
+    image_url:
+      'https://images.pexels.com/photos/672532/pexels-photo-672532.jpeg?auto=compress&cs=tinysrgb&w=1200',
+    price: 1190,
+    duration_days: 7,
+    group_size: 12,
+    difficulty: 'moderate',
+    includes: [
+      'Riad & desert camp',
+      'Daily breakfast',
+      'Camel trek',
+      'Desert camp dinner',
+      'Local guides',
+      'Atlas Mountains day trip',
+    ],
+    itinerary: [
+      { day: 1, title: 'Arrival in Marrakech', detail: 'Check in to your riad in the medina. Welcome tea.' },
+      { day: 2, title: 'Medina & souks', detail: 'Guided walk through the souks, Bahia Palace, and Jemaa el-Fnaa.' },
+      { day: 3, title: 'Atlas Mountains', detail: 'Day trip to the Ourika Valley and Berber villages.' },
+      { day: 4, title: 'Drive to the Sahara', detail: 'Over the High Atlas to Dades Gorge and Todra.' },
+      { day: 5, title: 'Camel trek & camp', detail: 'Camel ride into the Erg Chebbi dunes. Berber dinner and music at camp.' },
+      { day: 6, title: 'Return to Marrakech', detail: 'Sunrise in the dunes, then the long drive back.' },
+      { day: 7, title: 'Departure', detail: 'Free morning, transfer to airport.' },
+    ],
+    rating: 4.7,
+    sort_order: 5,
+  },
+  {
+    id: 'iceland-ring-road',
+    slug: 'iceland-ring-road',
+    title: 'Iceland Ring Road Explorer',
+    destination_slug: 'iceland',
+    description:
+      'Eight days circling the island — waterfalls, glaciers, black beaches, geysers, and a Northern Lights hunt.',
+    image_url:
+      'https://images.pexels.com/photos/2086361/pexels-photo-2086361.jpeg?auto=compress&cs=tinysrgb&w=1200',
+    price: 1990,
+    duration_days: 8,
+    group_size: 10,
+    difficulty: 'moderate',
+    includes: [
+      'Comfort hotels',
+      'Daily breakfast',
+      '4x4 rental',
+      'Blue Lagoon entry',
+      'Glacier hike',
+      'Northern Lights tour',
+    ],
+    itinerary: [
+      { day: 1, title: 'Arrival & Blue Lagoon', detail: 'Pick up your 4x4, soak in the Blue Lagoon, overnight in Reykjavik.' },
+      { day: 2, title: 'Golden Circle', detail: 'Thingvellir, Geysir, and Gullfoss waterfall. South coast overnight.' },
+      { day: 3, title: 'South coast', detail: 'Seljalandsfoss, Skogafoss, and Reynisfjara black beach.' },
+      { day: 4, title: 'Glacier lagoon', detail: 'Jokulsarlon iceberg lagoon and Diamond Beach.' },
+      { day: 5, title: 'East fjords', detail: 'Scenic drive through the fjords to Egilsstadir.' },
+      { day: 6, title: 'North Iceland', detail: 'Dettifoss waterfall and Lake Myvatn geothermal area.' },
+      { day: 7, title: 'West fjords & return', detail: 'Drive through the west, optional glacier hike on the way.' },
+      { day: 8, title: 'Departure', detail: 'Return to Keflavik airport.' },
+    ],
+    rating: 4.8,
+    sort_order: 6,
+  },
+];
+
+export const getDestination = (slug: string): Destination | undefined =>
+  DESTINATIONS.find((d) => d.slug === slug);
+
+export const getToursForDestination = (slug: string): Tour[] =>
+  TOURS.filter((t) => t.destination_slug === slug);
+
+export const getTour = (slug: string): Tour | undefined =>
+  TOURS.find((t) => t.slug === slug);
